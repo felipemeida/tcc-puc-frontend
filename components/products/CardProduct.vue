@@ -1,7 +1,7 @@
 <template>
   <div class="col mb-4">
     <div class="card">
-      <img :src="product.photo" class="card-img-top" :alt="'Produto' + product.name ">
+      <img :src="baseFile + product.photo" class="card-img-top" :alt="'Produto' + product.name ">
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}  <small class="text-muted">{{ product.brand }}</small></h5>
 <!--        {{ product.quantity }}-->
@@ -25,6 +25,11 @@ export default {
       required: true,
       type: Object
     }
+  },
+  data() {
+    return {
+      baseFile: process.env.baseUrlFile,
+    };
   },
   components: {
     CategoryBadge

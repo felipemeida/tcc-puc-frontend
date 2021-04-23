@@ -18,7 +18,7 @@
             <p class="mb-0">Atua com social mídia desde bla chuta escreve algo render para completar mais de uma linha
               com algum texto que possa fazer sentido</p>
             <img class="img-fluid"
-                 :src="post.user.photo"
+                 :src="baseFile + post.user.photo"
                  :alt="'Foto de ' + post.user.name"/>
           </div>
 
@@ -54,6 +54,11 @@ export default {
         message: 'Unable to fetch posts at this time. Please try again.'
       })
     }
+  },
+  data() {
+    return {
+      baseFile: process.env.baseUrlFile,
+    };
   },
   computed: mapState({
     post: state => state.posts.post.data

@@ -16,7 +16,8 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://127.0.0.1:8000/api'
+    baseUrl: process.env.BASE_URL || 'http://127.0.0.1:8000/api',
+    baseUrlFile: process.env.BASE_FILE || 'http://127.0.0.1:8000/storage/'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

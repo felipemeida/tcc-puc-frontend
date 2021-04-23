@@ -18,7 +18,7 @@
       </p>
     </div>
     <img class="card-img-right flex-auto d-none d-md-block"
-         src="https://www.janinemartins.com.br/wp-content/uploads/2020/08/image.png"
+         :src="baseFile + post.photo"
          alt="Capa do post">
   </div>
 </template>
@@ -32,6 +32,11 @@ export default {
       required: true,
       type: Object,
     }
+  },
+  data() {
+    return {
+      baseFile: process.env.baseUrlFile,
+    };
   },
   filters: {
     strippedContent: function(string) {

@@ -2,7 +2,7 @@
   <div class="card h-md-250 mb-4">
     <div class="row g-0">
       <div class="col-md-6 overflow-hidden">
-        <img class="card-image card-img-left" :src="book.photo" alt="Capa do livro">
+        <img class="card-image card-img-left" :src="baseFile + book.photo" alt="Capa do livro">
       </div>
       <div class="col-md-6">
         <div class="card-body">
@@ -25,6 +25,11 @@ export default {
       required: true,
       type: Object,
     }
+  },
+  data() {
+    return {
+      baseFile: process.env.baseUrlFile,
+    };
   },
   components: {
     CategoryBadge
